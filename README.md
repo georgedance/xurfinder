@@ -11,7 +11,7 @@ cd xurfinder
 python src/main.py
 ```
 
-alternatively, you could use the simple `[Makefile](/Makefile)` to run the script. (This is just a convenience for ymself out of habit.)
+alternatively, you could use the simple [`Makefile`](/Makefile) to run the script. (This is just a convenience for ymself out of habit.)
 ```sh
 make run
 # or
