@@ -1,3 +1,5 @@
+#!/bin/python
+
 import requests
 
 api_url = "https://paracausal.science/vendors/all.json"
@@ -6,7 +8,10 @@ response = requests.get(api_url)
 
 output = response.json()
 
-index = output['Response']['vendors']['data']['2190858386']['vendorLocationIndex']
+try:
+    index = output['Response']['vendors']['data']['2190858386']['vendorLocationIndex']
+except:
+    index = -1
 
 match index:
     case 0:
