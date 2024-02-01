@@ -1,6 +1,15 @@
 #!/bin/python
 
-import requests
+try:
+    import requests
+except:
+    import subprocess
+    try:
+        assert(subprocess.call(["pip", "install", "requests"],
+            stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT) == 0)
+        import requests
+    except:
+        raise
 
 api_url = "https://paracausal.science/vendors/all.json"
 
@@ -24,13 +33,4 @@ match index:
         location = "away"
 
 print("Xûr is " + location + ".")
-
-
-
-#output = json.dumps(json.loads(response.content.decode('utf-8')), indent=2)
-#output = response.content.decode('utf-8')
-
-#print(response.json()['Response'])
-#print(response.json()['Response']['vendorGroups']['data'])
-#print(output['Response']['data']['data']['inventoryItem']['itemName'])
 
